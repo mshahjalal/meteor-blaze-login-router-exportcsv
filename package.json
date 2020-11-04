@@ -1,0 +1,20 @@
+{
+  "name": "meteor-blaze-login-router-exportcsv",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "bcrypt": "^5.0.0",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "meteor-node-stubs": "^1.0.1",
+    "moment": "^2.29.1",
+    "papaparse": "^5.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0"
+  }
+}

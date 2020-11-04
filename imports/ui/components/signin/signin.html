@@ -1,0 +1,135 @@
+<template name="signin">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .main-container {
+            width: 500px;
+        }
+        
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+          margin-top: 6px;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .error-message {
+          color: red;
+        }
+
+        .hide {
+          display: hidden;
+        }
+        .show {
+          display: block;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75 {
+            width: 100%;
+            margin-top: 0;
+          }
+          input[type=submit] {
+            width: 100%;
+            margin-top: 6px;
+          }
+        }
+        </style>
+
+    <div class="main-container">
+        <h2>Administraion Panel</h2>
+
+        <div class="container">
+            {{#if currentUser}}
+
+            <div class="row">
+                <button class="logout">Logout</button>
+            </div>
+            
+              {{#if isAdminUser}}
+              <div class="row">
+                <h2><button class="export-users-csv-js">Export Users CSV</button></h2>
+              </div>  
+              {{/if}}
+            
+            {{else}}            
+            
+            <form class="user-login-js">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="email" name="email">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-25">
+                        <label for="psw">Password</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="password" id="password" name="psw">
+                    </div>
+                </div>
+                <div class="row">
+                <input type="submit" name="submit" value="Log In">
+                </div>
+
+                <div class="row error-message hide">
+                  
+                </div>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+    
+</template>
