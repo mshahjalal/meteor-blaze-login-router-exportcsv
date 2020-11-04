@@ -1,1 +1,1 @@
-# meteor-blaze-login-router-exportcsv
+# meteor blaze login router export (.csv format)
