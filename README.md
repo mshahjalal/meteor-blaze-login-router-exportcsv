@@ -29,4 +29,4 @@ email: manageusers@testapp.com
 
 password: manage1234
 
-Login url: http://localhost:3000/admin
+Login url: http://localhost:3000/signin
